@@ -2,7 +2,7 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/7g2wvgi4x0324yjc?svg=true)](https://ci.appveyor.com/project/bugagi67/polling-frontend)
 
-GH-PAGES: 
+GH-PAGES: https://bugagi67.github.io/polling-frontend/
 
 BACKEND: https://poling-backend.onrender.com
 
