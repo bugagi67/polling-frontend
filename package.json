@@ -36,7 +36,8 @@
   },
   "dependencies": {
     "core-js": "^3.39.0",
-    "date-fns": "^4.1.0"
+    "date-fns": "^4.1.0",
+    "rxjs": "^7.8.1"
   },
   "author": "Dmitry Greshnov",
   "license": "ISC",

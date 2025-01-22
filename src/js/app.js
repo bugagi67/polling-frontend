@@ -2,7 +2,7 @@ import Messages from "./Messages";
 import { ajax } from "rxjs/ajax";
 import { catchError, map, mergeMap } from "rxjs/operators";
 import { interval } from "rxjs";
-import { format } from "date-fns"
+import { format } from "date-fns";
 
 const messages = new Messages();
 const unreadMessage = [];
@@ -12,7 +12,7 @@ const pollingInterval$ = interval(10000);
 pollingInterval$
   .pipe(
     mergeMap(() =>
-      ajax.getJSON("http://localhost:9000/messages/unread").pipe(
+      ajax.getJSON("https://poling-backend.onrender.com/messages/unread").pipe(
         map((response) => {
           if (response.status === "ok") {
             return response;
@@ -43,7 +43,11 @@ pollingInterval$
         unreadMessage.push(message);
         const { from, subject, received } = message;
         const date = new Date(received);
-        messages.createElementMessage(from, subject, format(date, 'HH:mm dd.MM.yyyy'));
+        messages.createElementMessage(
+          from,
+          subject,
+          format(date, "HH:mm dd.MM.yyyy"),
+        );
       });
     },
     error: (error) => {
